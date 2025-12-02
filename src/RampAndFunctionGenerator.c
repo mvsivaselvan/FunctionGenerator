@@ -236,6 +236,9 @@ double FunctionGenerator(enum ProgramSource source, double phase)
 	case PSsquare:
 		val = squarefunc(phase);
 		break;
+	default:
+		val = 0.0;
+		break;
 	}
 
 	return val;
@@ -249,7 +252,7 @@ double get_ramp_val(double ramp_fract)
 	/*double x_bar;*/
 
 	ramp_fract = ramp_fract*(1.0 + DELT);
-
+	
 	if  (ramp_fract <= 0.0) {
 		val = 0.0;
 	}
