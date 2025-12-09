@@ -3,8 +3,6 @@
 
 #undef __LABVIEWRT /* this symbol is defined if to be built for LabVIEWRT DLL */
 
-#include "constants.h" /* for NCHAN and SAMPLE_DT */
-
 #define PI 3.141592653589793
 #define DELT 0.1 /* Time interval for smoothing ramp and sawtooth peak */
 

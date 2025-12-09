@@ -13,6 +13,14 @@ CC	:= x86_64-nilrt-linux-gcc.exe
 # GCCSYSROOTPATH=C:/build/17.0/x64/sysroots/core2-64-nilrt-linux
 CFLAGS =  -MD -MP -fdollars-in-identifiers -Wall -fPIC --sysroot=$(subst \,/,$(GCCSYSROOTPATH))
 
+# Number of function generator channels
+NCHAN ?= 4 # default
+CFLAGS += -DNCHAN=$(NCHAN) 
+
+# Sample time
+SAMPLE_DT ?= 0.001 # default
+CFLAGS += -DSAMPLE_DT=$(SAMPLE_DT)
+
 # File remove command
 RM	:= cs-rm -rf
 
@@ -46,7 +54,7 @@ $(PROJECT_TARGETS) : $(OBJECTS)
 	$(CC) $(LDFLAGS) -D$(DEFINES) -shared -m64 -Wl,-soname,"$@" -o "$@" $(OBJECTS) $(LIBPATH) $(LIBS) 
 	
 # Explicitly listing all source files
-user_code.o : user_code.c constants.h model.h RampAndFunctionGenerator.h
+user_code.o : user_code.c model.h RampAndFunctionGenerator.h
 	$(CC) $(CFLAGS) $(INCLUDES) -D$(DEFINES) -o "$@" -c "$<"
 
 RampAndFunctionGenerator.o : RampAndFunctionGenerator.c RampAndFunctionGenerator.h

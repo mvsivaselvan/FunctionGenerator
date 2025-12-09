@@ -1,8 +1,6 @@
 #ifndef MODEL_h
 # define MODEL_h 
 
-#include "constants.h"
-
 typedef struct {
 	int source;
 	int start_stop;

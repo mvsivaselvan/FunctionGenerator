@@ -10,4 +10,4 @@ These instructions are for Linux RT 64-bit targets from [here](https://knowledge
 2. ```cd c:\VeriStand\2025\ModelInterface\tmw\toolchain```
 3. ```Linux_64_GNU_Setup.bat```
 4. ```cd src```
-5. ```cs-make.exe -f FunctionGenerator-linux64.mk``` (for help, do ```cs-make.exe -h```) 
+5. ```cs-make.exe -f FunctionGenerator-linux64.mk NCHAN=<# channels> SAMPLE_DT=<# sample time>``` (for help, do ```cs-make.exe -h```) 
