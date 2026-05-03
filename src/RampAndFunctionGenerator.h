@@ -1,6 +1,14 @@
 #ifndef RAMPANDFUNCTIONGENERATOR_H_
 #define RAMPANDFUNCTIONGENERATOR_H_
 
+#ifndef NCHAN
+#error "NCHAN must be defined at compile time (e.g., -DNCHAN=4)"
+#endif
+
+#ifndef SAMPLE_DT
+#error "SAMPLE_DT must be defined at compile time (e.g., -DSAMPLE_DT=0.0009765625)"
+#endif
+
 #undef __LABVIEWRT /* this symbol is defined if to be built for LabVIEWRT DLL */
 
 #define PI 3.141592653589793

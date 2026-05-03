@@ -27,9 +27,9 @@
 	 ni_modelframework.c will manage all parameter access, but this typedef must be present
 	 in model.h
 */
+#include "RampAndFunctionGenerator.h"
 #include "model.h"
 
-#include "RampAndFunctionGenerator.h"
 #include <stddef.h>
 
 #define rtDBL 0
